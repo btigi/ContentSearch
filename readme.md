@@ -33,6 +33,25 @@ cs will run a case-insensitive scan the specified directory and all sub-director
 ![screenshot showing output](resources/screenshot.png)
 
 
+## Configuration
+
+cs will read configuration values from cs.json if the file exists. The default file content is below
+cs.json
+```
+{
+  "FileForegroundColour": "Yellow",
+  "FileBackgroundColour": "Black",
+  "LineNumberForegroundColor": "Cyan",
+  "LineForegroundColour": "White",
+  "LineBackgroundColour": "Black",
+  "DefaultForegroundColour": "White",
+  "DefaultBackgroundColour": "Black"
+}
+```
+
+The configuration sets colouring options in the output. Colours are .NET colour types mapped to ConsoleColour types. Invalid colours are mapped as black.
+
+
 ## Licencing
 
 Content Search is licenced under CC BY-NC-ND 4.0 https://creativecommons.org/licenses/by-nc-nd/4.0/ Full licence details are available in licence.md
