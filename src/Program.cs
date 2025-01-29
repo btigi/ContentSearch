@@ -27,6 +27,9 @@ var defaultForegroundConsoleColour = FromColour(defaultForegroundColour);
 var defaultBackgroundColour = Color.FromName(config["DefaultBackgroundColour"] ?? "Black");
 var defaultBackgroundConsoleColour = FromColour(defaultBackgroundColour);
 
+var existingBackgroundColour = Console.BackgroundColor;
+var existingBackgroundConsoleColour = Console.ForegroundColor;
+
 if (args.Length < 3)
 {
     Console.WriteLine("Usage: ");
@@ -73,9 +76,8 @@ foreach (var fileHit in hits.GroupBy(gb => gb.file))
     Console.WriteLine();
 }
 
-Console.ForegroundColor = defaultForegroundConsoleColour;
-Console.BackgroundColor = defaultBackgroundConsoleColour;
-
+Console.BackgroundColor = Console.BackgroundColor;
+Console.ForegroundColor = Console.ForegroundColor;
 
 
 static IEnumerable<(string file, int lineNumber, string content)> SearchContentListInFiles(string searchFolder, string extension, string searchText)
